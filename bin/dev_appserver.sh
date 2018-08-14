@@ -12,7 +12,7 @@ readonly SDK_BIN="$(cd -P "$(dirname "$0")" && pwd)"
 readonly SDK_LIB="$(dirname "${SDK_BIN}")/lib"
 readonly JAR_FILE="${SDK_LIB}/appengine-tools-api.jar"
 
-if [[ ! -e "${JAR_FILE}" ]]; then
+if [ ! -e "${JAR_FILE}" ]; then
     echo "${JAR_FILE} not found" >&2
     exit 1
 fi
