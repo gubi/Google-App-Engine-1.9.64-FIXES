@@ -8,8 +8,12 @@
 readonly SCRIPT_NAME="$1"
 shift
 
-readonly VERSION=$(java -version 2>&1 \
-    | sed -n '1s/.*version \"\([0-9]\+\).*\".*/\1/p')
+VERSION=$(java -version 2>&1 | sed -n '1s/.*version \"\([0-9]\+\).*\".*/\1/p');
+if [[ $VERSION == 1 ]]
+    then
+    VERSION=$(java -version 2>&1 | sed -n '1s/.*version \"[0-9]\+\.\([0-9]\+\).*\".*/\1/p');
+fi
+
 case "${VERSION}" in
 [1-6])
   cat >&2 <<EOF
@@ -20,6 +24,7 @@ $(java -version 2>&1)
 
 You can download the latest JDK from:
   http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
 EOF
   exit 1;;
 [7-9])
