@@ -4,7 +4,7 @@
 # Launches the Development AppServer.  This utility allows developers
 # to test a Google App Engine application on their local workstation.
 
-[[ -z "${DEBUG}" ]] || set -x  # trace if $DEBUG env. var. is non-zero
+[ -z "${DEBUG}" ] || set -x  # trace if $DEBUG env. var. is non-zero
 
 # Construct the absolute name of the SDK bin directory.
 # Use -P so pwd will see the real name, independent of symbolic links.
