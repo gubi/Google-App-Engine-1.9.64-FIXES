@@ -4,7 +4,7 @@
 # Launches the AppCfg utility, which allows Google App Engine
 # developers to deploy their application to the cloud.
 
-[[ -z "${DEBUG}" ]] || set -x  # trace if $DEBUG env. var. is non-zero
+[ -z "${DEBUG}" ] || set -x  # trace if $DEBUG env. var. is non-zero
 
 # Construct the absolute name of the SDK bin directory.
 # Use -P so pwd will see the real name, independent of symbolic links.

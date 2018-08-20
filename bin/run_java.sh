@@ -36,3 +36,4 @@ EOF
 esac
 
 exec java "$@"
+# exec java --add-modules=java.xml.bind,java.activation "$@"
